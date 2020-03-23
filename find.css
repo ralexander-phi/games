@@ -1,0 +1,32 @@
+body {
+  background-color: #aca;
+  text-align: center;
+  color: #335;
+}
+
+.cell {
+  cursor: pointer;
+  display: inline-block;
+  width: 18%;
+  margin: 5px;
+  background-color: #eef;
+  border-color: #aac;
+  border-style: solid;
+}
+
+.cell:not(.empty):hover {
+  background-color: #ccd;
+  transform: rotate(-2deg);
+}
+
+.cell.empty {
+  background-color: #efe;
+  border-color: #aca;
+  border-style: solid;
+}
+
+.cell.empty:hover {
+  transform: rotate(-2deg);
+  background-color: #cec;
+}
+
