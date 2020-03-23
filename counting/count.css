@@ -1,0 +1,72 @@
+body {
+  background-color: #bb6;
+  text-align: center;
+  color: #335;
+  user-select: none;
+}
+
+.row {
+  height: 10%;
+}
+
+.cell {
+  cursor: pointer;
+  display: inline-block;
+  width: 10%;
+  height: 10%;
+  margin: 5px;
+  background-color: #dde;
+  border-color: #dde;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.cell.empty {
+  visibility:hidden;
+}
+
+.cell:not(.counted):hover {
+  background-color: #888;
+  border-color: #666;
+  transform: rotate(-2deg);
+}
+
+.cell.counted {
+  background-color: #77a;
+  border-color: #77a;
+  border-style: solid;
+}
+
+.cell.counted:hover {
+  background-color: #557;
+  border-color: #557;
+  transform: rotate(-2deg);
+}
+
+.button {
+  font-size: 50px;
+  padding: 8px 16px;
+  margin: 8px;
+  background-color: #2cc;
+  border-radius: 12px;
+  border-color: #666;
+  border-style: solid;
+}
+
+.button:hover {
+  background-color: #377;
+}
+
+.button.wrong {
+  background-color: #f77;
+}
+
+.button.wrong:hover {
+background: repeating-linear-gradient(
+  45deg,
+  #f77,
+  #f77 10px,
+  #a88 10px,
+  #a88 20px
+);
+}
