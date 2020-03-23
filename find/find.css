@@ -2,6 +2,7 @@ body {
   background-color: #aca;
   text-align: center;
   color: #335;
+  user-select: none;
 }
 
 .cell {
