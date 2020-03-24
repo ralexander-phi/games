@@ -1,0 +1,35 @@
+body {
+  background-color: #aca;
+  text-align: center;
+  color: #335;
+  user-select: none;
+}
+
+.cell {
+  cursor: pointer;
+  display: inline-block;
+  width: 18%;
+  margin: 5px;
+  background-color: #eef;
+  border-color: #aac;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.cell:hover {
+  background-color: #ccd;
+  transform: rotate(-2deg);
+}
+
+.cell.win {
+background: repeating-linear-gradient(
+  45deg,
+  #edd,
+  #edd 10px,
+  #eaa 10px,
+  #eaa 20px
+);
+}
+
+.cell.win:hover {}
+
