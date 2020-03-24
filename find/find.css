@@ -13,6 +13,7 @@ body {
   background-color: #eef;
   border-color: #aac;
   border-style: solid;
+  border-radius: 15px;
 }
 
 .cell:not(.empty):hover {
