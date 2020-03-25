@@ -3,8 +3,7 @@ var nonPigs = ['🌱','🌲','🌳','🌴','🌵','🌾','🌿','🏔','⛰'];
 
 function notThePig(i) {
   return function() {
-    squares[i].innerHTML = '&nbsp';
-    squares[i].onclick = false;
+    squares[i].innerHTML = '&nbsp;';
     squares[i].classList.add('empty');
   }
 }
