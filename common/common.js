@@ -19,6 +19,29 @@ function arrayRemove(arr, value) {
   });
 }
 
+function chooseN(arr, n) {
+  var r = [];
+  for (var i = 0; i < n; i += 1) {
+    var v = randArrItem(arr);
+    arr = arrayRemoveOnce(arr, v);
+    r.push(v);
+  }
+  return r;
+}
+
+function arrayRemoveOnce(arr, value) {
+  var r = [];
+  var removed = false;
+  for (var i = 0; i < arr.length; i += 1) {
+    if (arr[i] == value && !removed) {
+      removed = true;
+    } else {
+      r.push(arr[i]);
+    }
+  }
+  return r;
+}
+
 function range(count) {
   var a = [];
   for (var i = 0; i < count; i += 1) {
