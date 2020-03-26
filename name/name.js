@@ -11,6 +11,7 @@ function winAnimation(i) {
   return function() {
     if (i == SIDE_LEN) {
       setTimeout(next, 1000);
+      return;
     }
     for (var j = 0; j < SIDE_LEN; j += 1) {
       var pos = j + SIDE_LEN*i;
@@ -18,6 +19,7 @@ function winAnimation(i) {
         squares[pos].innerHTML = '&nbsp;';
       }
       squares[pos].classList.add('win');
+      squares[pos].classList.remove('empty');
     }
     setTimeout(winAnimation(i+1), winAnimationFrameLen);
   }
@@ -35,9 +37,9 @@ function next() {
   // First reset everything with decoy letters
   for (var i = 0; i < squares.length; i += 1) {
     squares[i].innerText = randArrItem(decoyLetters);
-    squares[i].classList.remove('empty');
-    squares[i].classList.remove('win');
-    squares[i].classList.remove('name');
+    ['empty', 'win', 'name', 'hidden'].forEach(function(item, idx) {
+      squares[i].classList.remove(item);
+    })
     squares[i].onclick = notTheName(i);
   }
 
@@ -110,6 +112,10 @@ function showForm() {
 }
 
 function start() {
+  // Hide grid until name is set
+  for (var i = 0; i < squares.length; i += 1) {
+    squares[i].classList.add('hidden');
+  }
   showForm();
 }
 

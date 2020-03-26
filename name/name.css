@@ -22,7 +22,6 @@ body {
 
 .cell:hover {
   background-color: #ccd;
-  transform: rotate(-2deg);
 }
 
 .cell.empty {
@@ -32,7 +31,6 @@ body {
 
 .cell.empty:hover {
   opacity: 0.5;
-  transform: rotate(-2deg);
   background-color: #ded;
   transition: opacity 0.3s linear;
 }
@@ -47,6 +45,10 @@ body {
 .cell.win.name {
   border-color: black;
   transition: background-color 0.1s, border-color 0.1s linear;
+}
+
+.hidden {
+  display: none;
 }
 
 .cell.win:hover {}
