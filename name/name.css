@@ -1,0 +1,53 @@
+body {
+  background-color: #aca;
+  text-align: center;
+  color: #335;
+  user-select: none;
+  font-size: 20px;
+}
+
+.cell {
+  cursor: pointer;
+  display: inline-block;
+  min-width: 30px;
+  min-height: 30px;
+  margin: 5px;
+  padding: 15px;
+  background-color: #eef;
+  border-color: #aac;
+  border-style: solid;
+  border-radius: 15px;
+  transition: opacity 0.1s linear;
+}
+
+.cell:hover {
+  background-color: #ccd;
+  transform: rotate(-2deg);
+}
+
+.cell.empty {
+  opacity: 0.3;
+  transition: opacity 0.3s linear;
+}
+
+.cell.empty:hover {
+  opacity: 0.5;
+  transform: rotate(-2deg);
+  background-color: #ded;
+  transition: opacity 0.3s linear;
+}
+
+
+.cell.win {
+  background-color: gold;
+  border-color: gold;
+  transition: background-color 0.1s, border-color 0.1s linear;
+}
+
+.cell.win.name {
+  border-color: black;
+  transition: background-color 0.1s, border-color 0.1s linear;
+}
+
+.cell.win:hover {}
+
