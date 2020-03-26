@@ -1,17 +1,44 @@
-main, body, html {
+body {
   height: 100%;
   margin: auto;
   max-width: 60em;
   padding-left: 2em;
   padding-right: 2em;
-  font-family: Georgia, "Times New Roman", serif;
-  color: #484848;
-  background-color: #e8e8e8;
+  font-family: sans-serif;
+  background-image: linear-gradient(#f4e1d2, #b2b2b2);
 }
 
-img:not(.flow) {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+a {
+  font-size: 20px;
+}
+
+header {
+  color: #3e4a4e;
+  background-color: #b2b2b2;
+  text-align: center;
+  padding: 1px;
+}
+
+#gameList {
+  display: flex;
+  background-image: linear-gradient(#b2b2b2, #618685);
+  flex-wrap: wrap;
+}
+
+#gameList > div {
+  background-color: #aca;
+  min-width: 33%;
+  margin: 30px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  flex-grow: 1;
+  border-style: solid;
+  border-color: #575;
+}
+
+
+img {
+  height: 100px;
 }
 
