@@ -1,5 +1,8 @@
 var pig = '🐖';
-var nonPigs = ['🌱','🌲','🌳','🌴','🌵','🌾','🌿','🏔','⛰'];
+var nonPigs = ['🌱','🌲','🌳','🌴','🌵','🌾','🌿','🏔'];
+
+var lastNonPig = null;
+var lastPigPos = -1;
 
 function notThePig(i) {
   return function() {
@@ -9,8 +12,14 @@ function notThePig(i) {
 }
 
 function next() {
-  var nonPig = randArrItem(nonPigs);
-  var pigIdx = randInt(0, squares.length-1);
+  var nonPig;
+  var pigIdx;
+
+  while ((nonPig = randArrItem(nonPigs)) == lastNonPig);
+  while ((pigIdx = randInt(0, squares.length-1)) == lastPigPos);
+  lastNonPig = nonPig;
+  lastPigPos = pigIdx;
+
   for (var i = 0; i < squares.length; i += 1) {
     squares[i].classList.remove('empty');
     if (i == pigIdx) {

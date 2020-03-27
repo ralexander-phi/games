@@ -1,5 +1,6 @@
 var buttons = [];
 var answer = -1;
+var lastAnswer = -1;
 var things = ['😁', '🤖', '👶', '🦍', '🐺', '🦁', '🐴', '🦄', '🦓', '🐷', '🐰'];
 var lastThing = null;
 
@@ -20,7 +21,7 @@ function init() {
   
 function start() {
   var answerDiv = document.createElement('div');
-  for (var i = 1; i < (SIDE_LEN*SIDE_LEN+1); i += 1) {
+  for (var i = 1; i < (squares.length+1); i += 1) {
       var button = document.createElement('span');
       button.innerText = i;
       button.classList.add('button');
@@ -54,11 +55,12 @@ function next() {
   }
 
   var thing = null;
-  answer = randInt(1, 9);
+  while ((answer = randInt(1, squares.length)) == lastAnswer);
+  lastAnswer = answer;
   while ((thing = randArrItem(things)) == lastThing);
   lastThing = thing;
 
-  var places = range(SIDE_LEN*SIDE_LEN);
+  var places = range(squares.length);
 
   for (var i = 0; i < answer; i += 1) {
     var place = randArrItem(places);
