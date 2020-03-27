@@ -35,8 +35,8 @@ header {
   flex-grow: 1;
   border-style: solid;
   border-color: #575;
+  border-radius: 25px;
 }
-
 
 img {
   height: 100px;
