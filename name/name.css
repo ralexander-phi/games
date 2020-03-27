@@ -35,6 +35,9 @@ body {
   transition: opacity 0.3s linear;
 }
 
+input {
+  font-size: 40px;
+}
 
 .cell.win {
   background-color: gold;

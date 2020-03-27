@@ -96,6 +96,7 @@ function onSetName() {
 
 function showForm() {
   var form = document.createElement('form');
+  var p = document.createElement('p');
   form.setAttribute('id', 'form');
   form.action = '#';
   form.onsubmit = onSetName;
@@ -103,7 +104,8 @@ function showForm() {
   nameField.type = "text";
   nameField.id = 'name';
   nameField.placeholder = "What is your name?";
-  form.appendChild(nameField);
+  p.appendChild(nameField);
+  form.appendChild(p);
   var submit = document.createElement('input');
   submit.type = "submit";
   submit.value = "Play";
