@@ -19,6 +19,40 @@ function arrayRemove(arr, value) {
   });
 }
 
+function randBool() {
+  return Math.random() < 0.5;
+}
+
+function allNeighbors(idx, sideLen) {
+  var n = [];
+  if (idx % sideLen == 0) {
+    // idx is at the left side, pick the square to the right
+    n.push(idx + 1)
+  } else if (idx % sideLen == sideLen -1) {
+    // idx is at the right side, pick the square to the left
+    n.push(idx - 1);
+  } else {
+    n.push(idx + 1)
+    n.push(idx - 1);
+  }
+
+  if (idx < sideLen) {
+    // idx is at the top, pick the square below
+    n.push(idx + sideLen);
+  } else if (idx >= (sideLen*(sideLen-1))) {
+    // idx is at the bottom, pick the square above
+    n.push(idx - sideLen);
+  } else {
+    n.push(idx + sideLen);
+    n.push(idx - sideLen);
+  }
+  return n;
+}
+
+function randomNeighbor(idx, sideLen) {
+  return randArrItem(allNeighbors(idx, sideLen));
+}
+
 function chooseN(arr, n) {
   var r = [];
   for (var i = 0; i < n; i += 1) {

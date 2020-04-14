@@ -1,0 +1,23 @@
+body {
+  background-color: #aca;
+  text-align: center;
+  color: #335;
+  user-select: none;
+}
+
+.cell {
+  cursor: pointer;
+  display: inline-block;
+  width: 18%;
+  margin: 5px;
+  background-color: #eec;
+  border-color: #aac;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.cell:hover {
+  background-color: #aac;
+  transform: rotate(-2deg);
+}
+
