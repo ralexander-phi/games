@@ -1,7 +1,7 @@
 
 var monkey = '🐒';
 var banana = '🍌';
-var others = ['🌱','🌲','🌳','🌴','🌵','🌾','🌿','🏔'];
+var others = ['🌱','🌲','🌳','🌴','🌵','🌿','🏔'];
 
 var lastMonkeyIdx= -1;
 var WIN_TEXT = '🍌';
@@ -21,7 +21,7 @@ function next() {
   while ((monkeyIdx = randInt(0, squares.length-1)) == lastMonkeyIdx);
   lastMonkeyIdx = monkeyIdx;
 
-  var bananaIdx = allNeighbors(monkeyIdx, SIDE_LEN);
+  var bananaIdx = allNeighbors(monkeyIdx, SIDE_LEN, includeDiag=true);
 
   for (var i = 0; i < squares.length; i += 1) {
     squares[i].classList.remove('flipped');

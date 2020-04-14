@@ -3,6 +3,12 @@ body {
   text-align: center;
   color: #335;
   user-select: none;
+
+  text-shadow:
+  -1px -1px 0 #cca,
+  1px -1px 0 #cca,
+  -1px 1px 0 #cca,
+  1px 1px 0 #cca;
 }
 
 .cell {

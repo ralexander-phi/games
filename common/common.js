@@ -23,29 +23,56 @@ function randBool() {
   return Math.random() < 0.5;
 }
 
-function allNeighbors(idx, sideLen) {
+function atLeftSide(idx, sideLen) {
+  return idx % sideLen == 0;
+}
+
+function atRightSide(idx, sideLen) {
+  return idx % sideLen == sideLen -1;
+}
+
+function atTop(idx, sideLen) {
+  return idx < sideLen;
+}
+
+function atBottom(idx, sideLen) {
+  return idx >= (sideLen*(sideLen-1));
+}
+
+function allNeighbors(idx, sideLen, includeDiag=false) {
   var n = [];
-  if (idx % sideLen == 0) {
-    // idx is at the left side, pick the square to the right
-    n.push(idx + 1)
-  } else if (idx % sideLen == sideLen -1) {
-    // idx is at the right side, pick the square to the left
+
+  if (!atLeftSide(idx, sideLen)) {
     n.push(idx - 1);
-  } else {
-    n.push(idx + 1)
-    n.push(idx - 1);
+    if (includeDiag) {
+      if (!atTop(idx, sideLen)) {
+        n.push(idx - 1 - sideLen);
+      }
+      if (!atBottom(idx, sideLen)) {
+        n.push(idx - 1 + sideLen);
+      }
+    }
   }
 
-  if (idx < sideLen) {
-    // idx is at the top, pick the square below
-    n.push(idx + sideLen);
-  } else if (idx >= (sideLen*(sideLen-1))) {
-    // idx is at the bottom, pick the square above
-    n.push(idx - sideLen);
-  } else {
-    n.push(idx + sideLen);
+  if (!atRightSide(idx, sideLen)) {
+    n.push(idx + 1);
+    if (includeDiag) {
+      if (!atTop(idx, sideLen)) {
+        n.push(idx + 1 - sideLen);
+      }
+      if (!atBottom(idx, sideLen)) {
+        n.push(idx + 1 + sideLen);
+      }
+    }
+  }
+
+  if (!atTop(idx, sideLen)) {
     n.push(idx - sideLen);
   }
+  if (!atBottom(idx, sideLen)) {
+    n.push(idx + sideLen);
+  }
+
   return n;
 }
 
