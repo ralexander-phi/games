@@ -1,0 +1,58 @@
+body {
+  background-color: #ddd;
+  text-align: center;
+  color: #335;
+  user-select: none;
+  font-size: 30px;
+}
+
+.cell {
+  display: inline-block;
+  min-width: 30px;
+  min-height: 30px;
+  margin: 5px;
+  padding: 15px;
+  background-color: #eef;
+  border-color: #aac;
+  border-style: solid;
+  border-radius: 15px;
+  transition: opacity 0.1s linear;
+}
+
+.cell.green {
+  background-color: green;
+  border-color: black;
+  transition: background-color 0.2s, border-color 0.2s linear;
+}
+
+.cell.yellow {
+  background-color: yellow;
+  border-color: black;
+  transition: background-color 0.2s, border-color 0.2s linear;
+}
+
+.cell.dark {
+  background-color: grey;
+  border-color: black;
+  transition: background-color 0.2s, border-color 0.2s linear;
+}
+
+#story {
+  padding: 2em;
+}
+
+span.story {
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.cell.win:hover {}
+
+div.award {
+  margin-top: 1em;
+  font-size: 5em;
+}
+
