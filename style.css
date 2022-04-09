@@ -19,6 +19,11 @@ header {
   padding: 1px;
 }
 
+h2 {
+  background-color: #d87;
+  padding: 1em;
+}
+
 #gameList {
   display: flex;
   background-image: linear-gradient(#b2b2b2, #618685);
