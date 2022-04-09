@@ -30,6 +30,11 @@ function init() {}
 
 var book = "The large elephant has a very small friend, the mouse. The mouse climbs the elephant's trunk. They play together all day and night.";
 
+var words = book
+  .match(/\b(\w+)\b/g)
+  .filter(word => word.length == 5)
+  .map(w => w.toUpperCase());
+
 function clear() {
   // Remove all rows
   document.querySelectorAll('div.row').forEach(e => e.remove());
@@ -50,10 +55,7 @@ function newGuess() {
 }
 
 function pickTargetWord() {
-  var words = book.match(/\b(\w+)\b/g)
-  words = words.filter(word => word.length == 5);
-  var choice = words[Math.floor(Math.random() * words.length)];
-  return choice.toUpperCase();
+  return words[Math.floor(Math.random() * words.length)];
 }
 
 function next() {
@@ -124,11 +126,16 @@ function onKey(e) {
   const k = e.key.toUpperCase();
   if (k == 'ENTER') {
     if (currentGuess.length == 5) {
-      var isWin = currentGuess == targetWord;
-      if (isWin) {
-        win();
+      if (words.includes(currentGuess)) {
+        if (currentGuess == targetWord) {
+          win();
+        } else {
+          makeGuess(newGuess);
+        }
       } else {
-        makeGuess(newGuess);
+        // TODO: error message
+        currentGuess = '';
+        renderGuess();
       }
     } else {
       // too short, error
@@ -151,5 +158,4 @@ function onKey(e) {
     // ignore...
   }
 }
-
 

@@ -3,20 +3,21 @@ body {
   text-align: center;
   color: #335;
   user-select: none;
-  font-size: 30px;
+  font-size: 1.3em;
 }
 
 .cell {
   display: inline-block;
-  min-width: 30px;
-  min-height: 30px;
-  margin: 5px;
-  padding: 15px;
+  min-width: 1.2em;
+  min-height: 1.2em;
+  margin: 0.3em;
+  padding: 0.3em;
   background-color: #eef;
   border-color: #aac;
   border-style: solid;
   border-radius: 15px;
   transition: opacity 0.1s linear;
+  font-size: 1.8em;
 }
 
 .cell.green {
@@ -38,11 +39,8 @@ body {
 }
 
 #story {
-  padding: 2em;
-}
-
-span.story {
-  font-size: 20px;
+  padding: 3em;
+  font-size: 1.7em;
 }
 
 .hidden {
