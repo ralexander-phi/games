@@ -21,15 +21,24 @@ function onClick(i) {
 }
 
 function checkAllHappy() {
+  var allSad = true;
+  var allHappy = true;
+  
   for (var i = 0; i < squares.length; i += 1) {
     if (squares[i].classList.contains('sad')) {
       // someone is still sad
-      return;
+      allHappy = false;
+    }
+    if (squares[i].classList.contains('happy')) {
+      // someone is still sad
+      allSad = false;
     }
   }
 
   // Success!
-  win();
+  if (allHappy || allSad) {
+    win();
+  }
 }
 
 function win() {
