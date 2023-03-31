@@ -1,0 +1,92 @@
+body {
+  background-color: #acc;
+  text-align: center;
+  color: #335;
+  user-select: none;
+}
+
+span.team {
+  margin: 1em;
+}
+
+span.player {
+  font-size: 2em;
+  padding: 0.3em;
+}
+
+button {
+  border-radius: 0.2em;
+  background-color: darkgreen;
+  color: lightblue;
+  font-weight: bold;
+  font-size: 2.3em;
+  padding: 0.8em 1em 0.8em 1em;
+}
+
+button::before {
+  content: "ROLL";
+}
+
+button:disabled {
+  background-color: orangered;
+}
+
+button:disabled::before {
+  content: ". . .";
+}
+
+#rollViewOuter.rolling {
+  animation-name: roll;
+  animation-duration: 0.31s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#rollViewOuter.rolling > div {
+  animation-name: bounce-sides;
+  animation-duration: 0.22s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#rollViewOuter.rolling > div > h1 {
+  animation-name: bounce;
+  animation-duration: 0.18s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(-9px);
+  }
+  to{
+    transform: translateY(9px);
+  }
+}
+
+@keyframes bounce-sides {
+  from {
+    transform: translateX(-6px);
+  }
+  to{
+    transform: translateX(6px);
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(10deg);
+  }
+  to{
+    transform: rotate(-10deg);
+  }
+}
+
