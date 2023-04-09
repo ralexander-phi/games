@@ -1,0 +1,87 @@
+body {
+  background-color: #aca;
+  text-align: center;
+  color: #335;
+}
+
+div {
+  padding: 0px;
+  margin: 0px;
+}
+
+span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+}
+
+#game.level-1 div {
+  height: 20px;
+}
+
+#game.level-1 span {
+  width: 20px;
+  height: 20px;
+}
+
+#game.level-2 div {
+  height: 15px;
+}
+
+#game.level-2 span {
+  width: 15px;
+  height: 15px;
+}
+
+#game.level-3 div {
+  height: 10px;
+}
+
+#game.level-3 span {
+  width: 10px;
+  height: 10px;
+}
+
+#game.level-4 div {
+  height: 5px;
+}
+
+#game.level-4 span {
+  width: 5px;
+  height: 5px;
+}
+
+#game.level-5 div {
+  height: 2px;
+}
+
+#game.level-5 span {
+  width: 2px;
+  height: 2px;
+}
+
+#game.play span {
+  background-color: #aca;
+}
+
+#game.play span.wall {
+  background-color: #933;
+}
+
+#game.play span.end {
+  background-color: gold;
+}
+
+#game.restart span {
+  background-color: #aca;
+}
+
+#game.restart span.start {
+  background-color: #493;
+}
+
+span:hover {
+  background-color: #059;
+}
+
