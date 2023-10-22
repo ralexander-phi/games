@@ -1,0 +1,30 @@
+body {
+  background-color: #acc;
+  text-align: center;
+  user-select: none;
+}
+
+.cell {
+  cursor: pointer;
+  display: inline-block;
+  width: 18%;
+  margin: 0.1em;
+  background-color: #eee;
+  border-color: #aac;
+  border-style: solid;
+  border-radius: 15px;
+  transition: opacity 0.1s linear;
+  font-size: 0.6em;
+  color: #666; 
+}
+
+.cell.complete {
+  border-color: #a96;
+  background-color: #dc8;
+}
+
+.cell.free {
+  border-color: #96a;
+  background-color: #c8d;
+}
+
