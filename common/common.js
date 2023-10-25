@@ -90,6 +90,34 @@ function chooseN(arr, n) {
   return r;
 }
 
+// Insecure 32bit hash
+function fastHash(s) {
+  var hash = 0;
+  for (var i = 0, len = s.length; i < len; i++) {
+    var chr = s.charCodeAt(i);
+    hash = (hash << 5) - hash + chr;
+    hash |= 0;
+  }
+  return hash;
+}
+
+function chooseNForToday(arr, n) {
+  var now = new Date()
+  // Seed with the current date, in the current timezone
+  var seed = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toJSON().slice(0, 10)
+  var offset = fastHash(seed);
+
+  var r = [];
+  for (var i = 0; i < n; i += 1) {
+    var v = arr[Math.abs(offset % arr.length)];
+    arr = arrayRemoveOnce(arr, v);
+    r.push(v);
+    seed += 'x';
+    offset += fastHash(seed);
+  }
+  return r;
+}
+
 function arrayRemoveOnce(arr, value) {
   var r = [];
   var removed = false;

@@ -41,7 +41,7 @@ function toggle(i) {
 }
 
 function next() {
-  var tasks = chooseN(challenges, 24);
+  var tasks = chooseNForToday(challenges, 24);
   tasks.splice(12, 0, "FREE")
 
   for (var i = 0; i < squares.length; i += 1) {
