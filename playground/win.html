@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game completed</title>
+    <style>
+      body {
+        padding: 3em;
+      }
+      h1, h2, h3 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Your score</h2>
+    <h1 id="score"></h1>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <h3>
+    <a href="index.html">Play again?</a>
+    </h3>
+
+  </body>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = urlParams.get('score');
+    const h1 = document.getElementById("score");
+    h1.innerText = score;
+  </script>

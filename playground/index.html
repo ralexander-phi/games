@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="assets/phaser.min.js"></script>
+    <script src="assets/common.js"></script>
+    <script src="assets/parent.js"></script>
+    <script src="assets/player.js"></script>
+    <script src="assets/levels.js"></script>
+</head>
+<body>
+</body>
+    <script>
+const config = {
+  type: Phaser.AUTO,
+  width: SIZE,
+  height: SIZE,
+  scene: Level1,
+  physics: {
+    default: 'arcade',
+    arcade: {}
+  }
+};
+
+const game = new Phaser.Game(config);
+    </script>
+</html>
